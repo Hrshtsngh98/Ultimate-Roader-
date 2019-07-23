@@ -14,5 +14,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    class func fromStoryboard() -> HomeViewController? {
+        let controller = instantiateController(from: "Home", with: "HomeViewController", from: nil) as? HomeViewController
+        return controller
+    }
 
 }

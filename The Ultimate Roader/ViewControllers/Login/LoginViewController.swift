@@ -14,8 +14,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    class func fromStoryboard() -> LoginViewController? {
+        let controller = instantiateController(from: "Login", with: "LoginViewController", from: nil) as? LoginViewController
+        return controller
+    }
 
     @IBAction func loginButtonAction(_ sender: UIButton) {
+        if let controller = HomeViewController.fromStoryboard() {
+            swapController(with: controller)
+        }
     }
     
 }
