@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, Theme {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = baseThemeColor
     }
     
     class func fromStoryboard() -> HomeViewController? {
@@ -21,4 +21,15 @@ class HomeViewController: UIViewController {
         return controller
     }
 
+    @IBAction func signoutButtonAction(_ sender: UIButton) {
+        if let controller = LoginViewController.fromStoryboard() {
+            swapController(with: controller)
+        }
+    }
+    
+    @IBAction func startDrivingButtonAction(_ sender: UIButton) {
+        if let controller = StartDrivingViewController.fromStoryboard() {
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 }

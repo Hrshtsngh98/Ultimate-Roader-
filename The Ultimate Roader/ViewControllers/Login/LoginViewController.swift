@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonAction(_ sender: UIButton) {
-        if let controller = HomeViewController.fromStoryboard() {
+        if let controller = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() {
             swapController(with: controller)
         }
     }
