@@ -17,6 +17,7 @@
 		EE81021922E75B2900CC9A97 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE81021822E75B2900CC9A97 /* Home.storyboard */; };
 		EEE2B5B922E75DC400652A62 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2B5B822E75DC400652A62 /* HomeViewController.swift */; };
 		EEE2B5BB22E75E7700652A62 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2B5BA22E75E7700652A62 /* UIViewController+Util.swift */; };
+		EEE2B5BD22E7740B00652A62 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2B5BC22E7740B00652A62 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EE81021822E75B2900CC9A97 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Home.storyboard; path = "../../../../../../../System/Volumes/Data/Users/harshit/Desktop/The Ultimate Roader/The Ultimate Roader/Storyboards/Home/Home.storyboard"; sourceTree = "<group>"; };
 		EEE2B5B822E75DC400652A62 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "../../../../../../../System/Volumes/Data/Users/harshit/Desktop/The Ultimate Roader/The Ultimate Roader/ViewControllers/Home/HomeViewController.swift"; sourceTree = "<group>"; };
 		EEE2B5BA22E75E7700652A62 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Util.swift"; path = "../../../../../../System/Volumes/Data/Users/harshit/Desktop/The Ultimate Roader/The Ultimate Roader/Helpers/UIViewController+Util.swift"; sourceTree = "<group>"; };
+		EEE2B5BC22E7740B00652A62 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = "../../../../../../System/Volumes/Data/Users/harshit/Desktop/The Ultimate Roader/The Ultimate Roader/Helpers/Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				EE81021622E75B0800CC9A97 /* Constants.swift */,
 				EEE2B5BA22E75E7700652A62 /* UIViewController+Util.swift */,
+				EEE2B5BC22E7740B00652A62 /* Theme.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				EEE2B5BB22E75E7700652A62 /* UIViewController+Util.swift in Sources */,
 				EE8101FC22E7576800CC9A97 /* LoginViewController.swift in Sources */,
 				EE8101FA22E7576800CC9A97 /* AppDelegate.swift in Sources */,
+				EEE2B5BD22E7740B00652A62 /* Theme.swift in Sources */,
 				EE81020C22E758E800CC9A97 /* Constants.swift in Sources */,
 				EEE2B5B922E75DC400652A62 /* HomeViewController.swift in Sources */,
 			);

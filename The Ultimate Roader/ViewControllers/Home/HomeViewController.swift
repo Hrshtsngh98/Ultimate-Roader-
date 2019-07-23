@@ -12,11 +12,12 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .green
     }
     
     class func fromStoryboard() -> HomeViewController? {
-        let controller = instantiateController(from: "Home", with: "HomeViewController", from: nil) as? HomeViewController
+        let storyboard = UIStoryboard.init(name: "Home", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
         return controller
     }
 

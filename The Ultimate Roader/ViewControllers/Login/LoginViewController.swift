@@ -15,8 +15,9 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    class func fromStoryboard() -> LoginViewController? {
-        let controller = instantiateController(from: "Login", with: "LoginViewController", from: nil) as? LoginViewController
+    class func fromStoryboard() -> LoginViewController? {        
+        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
         return controller
     }
 
