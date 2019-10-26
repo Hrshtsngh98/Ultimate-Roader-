@@ -11,6 +11,8 @@ import GoogleMaps
 
 class StartDrivingViewModel {
     var path: [CLLocation] = []
+    var stringPath: String = ""
+    var pathName = ""
     
     init() {}
     
@@ -25,7 +27,7 @@ class StartDrivingViewModel {
     }
     
     func addLocationToPath(location: CLLocation) {
-        
+        path.append(location)
     }
     
     func savePathFile() {
