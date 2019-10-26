@@ -9,12 +9,14 @@
 import UIKit
 import GoogleMaps
 
-class StartDrivingViewController: UIViewController {
+class StartDrivingViewController: UIViewController, Theme {
 
     @IBOutlet weak var mapView: GMSMapView!
     var locationManager: CLLocationManager!
     var currentLocationMarker: GMSMarker!
     var viewModel: StartDrivingViewModel!
+    var polyline = GMSPolyline()
+    var gmsPath = GMSMutablePath()
     
     class func fromStoryboard() -> StartDrivingViewController? {
         let storyboard = UIStoryboard.init(name: "Drive Options", bundle: nil)
@@ -29,6 +31,14 @@ class StartDrivingViewController: UIViewController {
         setUpLocationManager()
         setUpMap()
     }
+    
+//    func start_trip() {
+//        gmsPath.removeAllCoordinates()
+//        databaseRef = Database.database().reference().child("Paths").childByAutoId()
+//        path = Path()
+//        path?.pathID = databaseRef?.key
+//        ManagePath.addInitialPath(pathID: (path?.pathID)!)
+//    }
     
     func setUpNavigationBar() {
         title = "You are driving!"
@@ -61,6 +71,18 @@ class StartDrivingViewController: UIViewController {
         
     }
     
+    func addLocationToPolylinePath(location: CLLocation) {
+        gmsPath.add(location.coordinate)
+        polyline.path = gmsPath
+        polyline.strokeColor = pathColor
+        polyline.strokeWidth = 5
+        polyline.zIndex = 10
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(2.0)
+        polyline.map = mapView
+        CATransaction.commit()
+    }
+    
     @objc func backButtonAction() {
         locationManager.stopUpdatingHeading()
         locationManager.stopUpdatingLocation()
@@ -74,7 +96,8 @@ extension StartDrivingViewController: GMSMapViewDelegate { }
 extension StartDrivingViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let lastLocation = locations.last else { return }
-        moveCameraToPosition(location: lastLocation)
         viewModel.addLocationToPath(location: lastLocation)
+        moveCameraToPosition(location: lastLocation)
+        addLocationToPolylinePath(location: lastLocation)
     }
 }

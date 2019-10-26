@@ -11,10 +11,10 @@ import UIKit
 extension UIColor {
     
     static func roaderLightThemeColor() -> UIColor {
-        return UIColor.green
+        return #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
     }
     
-    static func roaderDarkThemeColor() -> UIColor {
-        return UIColor.red
+    static func roaderLightPathColor() -> UIColor {
+        return #colorLiteral(red: 0, green: 1, blue: 0.9019607843, alpha: 1)
     }
 }

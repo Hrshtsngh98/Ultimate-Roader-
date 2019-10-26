@@ -10,11 +10,16 @@ import UIKit
 
 protocol Theme {
     var baseThemeColor: UIColor { get }
+    var pathColor: UIColor { get }
 }
 
 extension Theme {
     var baseThemeColor: UIColor {
         return UIColor.roaderLightThemeColor()
+    }
+    
+    var pathColor: UIColor {
+        return UIColor.roaderLightPathColor()
     }
     
 }
